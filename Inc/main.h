@@ -4,7 +4,7 @@
   * Description        : This file contains the common defines of the application
   ******************************************************************************
   *
-  * Copyright (c) 2017 STMicroelectronics International N.V. 
+  * Copyright (c) 2018 STMicroelectronics International N.V. 
   * All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without 
@@ -51,12 +51,20 @@
 
 /* Private define ------------------------------------------------------------*/
 
+#define ADF_CS_Pin GPIO_PIN_2
+#define ADF_CS_GPIO_Port GPIOA
 #define ADF_RST_Pin GPIO_PIN_3
 #define ADF_RST_GPIO_Port GPIOA
 #define USER_SW_Pin GPIO_PIN_9
 #define USER_SW_GPIO_Port GPIOA
 #define LED_Pin GPIO_PIN_10
 #define LED_GPIO_Port GPIOA
+#define AUX1_Pin GPIO_PIN_5
+#define AUX1_GPIO_Port GPIOB
+#define AUX2_Pin GPIO_PIN_8
+#define AUX2_GPIO_Port GPIOB
+#define AUX3_Pin GPIO_PIN_9
+#define AUX3_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

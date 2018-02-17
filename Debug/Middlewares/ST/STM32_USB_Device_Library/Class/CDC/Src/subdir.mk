@@ -18,7 +18,7 @@ Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/%.o: ../Middlewares/ST/STM
 	@echo 'Building file: $<'
 	@echo 'Invoking: MCU GCC Compiler'
 	@echo %cd%
-	arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -std=c11 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F103xB -I"D:/stm32/adf7030_test_hsi/Inc" -I"D:/stm32/adf7030_test_hsi/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/stm32/adf7030_test_hsi/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/stm32/adf7030_test_hsi/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/stm32/adf7030_test_hsi/Drivers/CMSIS/Include" -I"D:/stm32/adf7030_test_hsi/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"D:/stm32/adf7030_test_hsi/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc"  -Os -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -std=c11 '-D__weak=__attribute__((weak))' '-D__packed=__attribute__((__packed__))' -DUSE_HAL_DRIVER -DSTM32F103xB -I"D:/stm32/adf7030_test_hsi/Inc" -I"D:/stm32/adf7030_test_hsi/Drivers/STM32F1xx_HAL_Driver/Inc" -I"D:/stm32/adf7030_test_hsi/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy" -I"D:/stm32/adf7030_test_hsi/Drivers/CMSIS/Device/ST/STM32F1xx/Include" -I"D:/stm32/adf7030_test_hsi/Drivers/CMSIS/Include" -I"D:/stm32/adf7030_test_hsi/Middlewares/ST/STM32_USB_Device_Library/Core/Inc" -I"D:/stm32/adf7030_test_hsi/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc"  -Og -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

@@ -33,9 +33,10 @@ POSSIBILITY OF SUCH DAMAGE.
 
 #include <stdlib.h>
 #include "Adafruit_GFX.h"
-#include "ssd1306.h"
-#include "glcdfont.c"
 
+#include "gfxfont.h"
+#include "ssd1306.h"
+extern const unsigned char defFont[];
 extern int16_t WIDTH, HEIGHT;   // This is the 'raw' display w/h - never changes
 int16_t _width, _height;
 int16_t cursor_x, cursor_y;// Display w/h as modified by current rotation
@@ -394,7 +395,7 @@ void drawBitmap1(int16_t x, int16_t y, uint8_t *bitmap, int16_t w, int16_t h, ui
 {
 
   int16_t i, j, byteWidth = (w + 7) / 8;
-  uint8_t byte;
+  uint8_t byte=0;
 
   for(j=0; j<h; j++) {
     for(i=0; i<w; i++) {
@@ -412,13 +413,13 @@ void drawBitmap2(int16_t x, int16_t y, uint8_t *bitmap, int16_t w, int16_t h, ui
 {
 
   int16_t i, j, byteWidth = (w + 7) / 8;
-  uint8_t byte;
+  uint8_t byteI=0;
 
   for(j=0; j<h; j++) {
     for(i=0; i<w; i++ ) {
-      if(i & 7) byte <<= 1;
-      else      byte   = pgm_read_byte(bitmap + j * byteWidth + i / 8);
-      if(byte & 0x80) drawPixel(x+i, y+j, color);
+      if(i & 7) byteI <<= 1;
+      else      byteI   = pgm_read_byte(bitmap + j * byteWidth + i / 8);
+      if(byteI & 0x80) drawPixel(x+i, y+j, color);
       else            drawPixel(x+i, y+j, bg);
     }
   }
@@ -429,7 +430,7 @@ void drawBitmap3(int16_t x, int16_t y, uint8_t *bitmap, int16_t w, int16_t h, ui
 {
 
   int16_t i, j, byteWidth = (w + 7) / 8;
-  uint8_t byte;
+  uint8_t byte=0;
 
   for(j=0; j<h; j++) {
     for(i=0; i<w; i++ ) {
@@ -445,7 +446,7 @@ void drawBitmap4(int16_t x, int16_t y, uint8_t *bitmap, int16_t w, int16_t h, ui
 {
 
   int16_t i, j, byteWidth = (w + 7) / 8;
-  uint8_t byte;
+  uint8_t byte=0;
 
   for(j=0; j<h; j++) {
     for(i=0; i<w; i++ ) {
@@ -464,7 +465,7 @@ void drawXBitmap(int16_t x, int16_t y, uint8_t *bitmap, int16_t w, int16_t h, ui
 {
 
   int16_t i, j, byteWidth = (w + 7) / 8;
-  uint8_t byte;
+  uint8_t byte=0;
 
   for(j=0; j<h; j++) {
     for(i=0; i<w; i++ ) {
@@ -546,7 +547,7 @@ void drawChar(int16_t x, int16_t y, unsigned char c,
 
     for(int8_t i=0; i<6; i++ ) {
       uint8_t line;
-      if(i < 5) line = pgm_read_byte(font+(c*5)+i);
+      if(i < 5) line = pgm_read_byte(defFont+(c*5)+i);
       else      line = 0x0;
       for(int8_t j=0; j<8; j++, line >>= 1) {
         if(line & 0x1) {
@@ -575,8 +576,8 @@ void drawChar(int16_t x, int16_t y, unsigned char c,
              //xa = pgm_read_byte(&glyph->xAdvance);
     int8_t   xo = pgm_read_byte(&glyph->xOffset),
              yo = pgm_read_byte(&glyph->yOffset);
-    uint8_t  xx, yy, bits, bit = 0;
-    int16_t  xo16, yo16;
+    uint8_t  xx, yy, bits=0, bit = 0;
+    int16_t  xo16=0, yo16=0;
 
     if(size > 1) {
       xo16 = xo;
