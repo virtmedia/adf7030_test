@@ -11,4 +11,17 @@ to migrate on a different hardware platform, like PIC or AVR. For that, all hard
 Together with the software project there is also a hardware with electronic schematic and PCB design. 
 The first prototype was build sucessfully and it will be used to test the software library. 
 
+Documentation:
+
+[ADF7030-1 Software Reference Manual](http://www.analog.com/adf7030-1-Software-Ref-Manual?doc=adf7030-1.pdf) 
+
+
+Here is the photo of the board(s):
+![boards](https://github.com/virtmedia/adf7030_test/blob/master/doc/board.jpg)
+MCU pinout:
+![pinout](https://github.com/virtmedia/adf7030_test/blob/master/doc/stm32f103c8t6.PNG)
+MCU clock configuration:
+![clock](https://github.com/virtmedia/adf7030_test/blob/master/doc/stm32f103c8t6_clock.PNG)
+IDE:
+![ide](https://github.com/virtmedia/adf7030_test/blob/master/doc/stm32_code_workbench.PNG)
 
