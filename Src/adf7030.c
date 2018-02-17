@@ -52,6 +52,10 @@ uint8_t adf7030_spi_byte(uint8_t dataToSend) //Without CS manipulation
 	return dataReceived;
 }
 
+void adf7030_delay_ms(uint32_t duration)
+{
+	HAL_Delay(duration);
+}
 
 /**
  * Main functions
@@ -67,9 +71,9 @@ uint8_t adf7030_spi_byte_cs(uint8_t dataToSend)//With CS manipulation
 
 void adf7030_begin(void)
 {
-	HAL_GPIO_WritePin(ADF_RST_GPIO_Port,ADF_RST_Pin, GPIO_PIN_RESET);
-	HAL_Delay(1);
-	HAL_GPIO_WritePin(ADF_RST_GPIO_Port,ADF_RST_Pin, GPIO_PIN_SET);
-	//HAL_GPIO_WritePin(
-	HAL_SPI_Init(&hspi1);
+	adf7030_spi_init(&hspi1);
+	adf7030_rst_low();
+	adf7030_delay_ms(1);
+	adf7030_rst_high();
+
 }

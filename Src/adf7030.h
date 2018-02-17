@@ -21,7 +21,7 @@ void adf7030_cs_low(void);
 void adf7030_cs_high(void);
 uint8_t adf7030_spi_init(SPI_HandleTypeDef *hspi);
 uint8_t adf7030_spi_byte(uint8_t dataToSend); //Without CS manipulation
-
+void adf7030_delay_ms(uint32_t duration);
 
 
 uint8_t adf7030_spi_byte_cs(uint8_t dataToSend);//With CS manipulation

@@ -18,10 +18,14 @@ Documentation:
 
 Here is the photo of the board(s):
 ![boards](https://github.com/virtmedia/adf7030_test/blob/master/doc/board.jpg)
+
 MCU pinout:
 ![pinout](https://github.com/virtmedia/adf7030_test/blob/master/doc/stm32f103c8t6.PNG)
+
 MCU clock configuration:
 ![clock](https://github.com/virtmedia/adf7030_test/blob/master/doc/stm32f103c8t6_clock.PNG)
+
 IDE:
 ![ide](https://github.com/virtmedia/adf7030_test/blob/master/doc/stm32_code_workbench.PNG)
+
 
