@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "stm32f1xx_hal.h"
+#include "gpio.h"
 //#include "Adafruit_GFX.h"
 
 #define SSD1306_ADDR (0x78)

@@ -251,20 +251,20 @@ void drawRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color)
   drawFastVLine(x, y, h, color);
   drawFastVLine(x+w-1, y, h, color);
 }
-
-__weak void drawFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color)
+#if 0
+void drawFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color)
 {
   // Update in subclasses if desired!
   drawLine(x, y, x, y+h-1, color);
 }
 
-__weak void drawFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color)
+void drawFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color)
 {
   // Update in subclasses if desired!
   drawLine(x, y, x+w-1, y, color);
 }
-
-__weak void fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color)
+#endif
+void fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color)
 {
   // Update in subclasses if desired!
   for (int16_t i=x; i<x+w; i++) {
@@ -884,8 +884,9 @@ void getTextBounds(const __FlashStringHelper *str,
 
 #endif
 
-
-__weak void invertDisplay(int i) {
+#if 0
+void invertDisplay(int i) {
   // Do nothing, must be subclassed if supported by hardware
 }
+#endif
 

@@ -1,0 +1,14 @@
+oled.c:107:6:OLED_Init	4	static
+oled.c:141:19:OLED_Cmd	32	static
+oled.c:150:19:OLED_Data	32	static
+oled.c:158:6:SetPosChar	16	static
+oled.c:164:6:SetPos	16	static
+oled.c:170:6:CharMedium	24	static
+oled.c:183:6:CharBig	24	static
+oled.c:200:6:WriteChar	24	static
+oled.c:215:6:OledTxt	16	static
+oled.c:223:9:SetColumn	16	static
+oled.c:234:9:SetLine	16	static
+oled.c:242:9:SetPage	16	static
+oled.c:250:6:OledBmp	16	static
+oled.c:268:6:OledCls	16	static

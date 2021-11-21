@@ -1,0 +1,9 @@
+adf7030.c:22:6:adf7030_rst_low	8	static
+adf7030.c:27:6:adf7030_rst_high	8	static
+adf7030.c:32:6:adf7030_cs_low	8	static
+adf7030.c:37:6:adf7030_cs_high	8	static
+adf7030.c:42:9:adf7030_spi_init	16	static
+adf7030.c:49:9:adf7030_spi_byte	32	static
+adf7030.c:56:6:adf7030_delay_ms	16	static
+adf7030.c:64:9:adf7030_spi_byte_cs	24	static
+adf7030.c:73:6:adf7030_begin	8	static

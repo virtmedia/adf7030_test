@@ -137,8 +137,7 @@ void drawPixel(int16_t x, int16_t y, uint16_t color);
 void drawFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color);
 void drawFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color);
 
-//inline void drawFastVLineInternal(int16_t x, int16_t y, int16_t h, uint16_t color);
-//inline void drawFastHLineInternal(int16_t x, int16_t y, int16_t w, uint16_t color);
+
 
 int getWidth(void);
 int getHeight(void);

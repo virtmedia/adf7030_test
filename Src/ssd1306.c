@@ -37,8 +37,10 @@ int width = SSD1306_LCDWIDTH;
 int height = SSD1306_LCDHEIGHT;
 int WIDTH = SSD1306_LCDWIDTH;
 int HEIGHT = SSD1306_LCDHEIGHT;
-inline void drawFastHLineInternal(int16_t x, int16_t y, int16_t w, uint16_t color);
-inline static void drawFastVLineInternal(int16_t x, int16_t __y, int16_t __h, uint16_t color);
+void drawFastHLineInternal(int16_t x, int16_t y, int16_t w, uint16_t color);
+//inline static void drawFastVLineInternal(int16_t x, int16_t __y, int16_t __h, uint16_t color);
+void drawFastVLineInternal(int16_t x, int16_t y, int16_t h, uint16_t color);
+
 // the memory buffer for the LCD
 //Note that this includes the 0x40 prefix!!!
 uint8_t framebuffer[SSD1306_LCDHEIGHT * SSD1306_LCDWIDTH / 8 + 1] = {0x40,
@@ -324,7 +326,8 @@ void drawFastHLine(int16_t x, int16_t y, int16_t w, uint16_t color) {
   }
 }
 
-inline void drawFastHLineInternal(int16_t x, int16_t y, int16_t w, uint16_t color) {
+
+void drawFastHLineInternal(int16_t x, int16_t y, int16_t w, uint16_t color) {
   // Do bounds/limit checks
   if(y < 0 || y >= HEIGHT) { return; }
 
@@ -393,7 +396,7 @@ void drawFastVLine(int16_t x, int16_t y, int16_t h, uint16_t color) {
 }
 
 
-inline static void drawFastVLineInternal(int16_t x, int16_t __y, int16_t __h, uint16_t color) {
+inline void drawFastVLineInternal(int16_t x, int16_t __y, int16_t __h, uint16_t color) {
 
   // do nothing if we're off the left or right side of the screen
   if(x < 0 || x >= WIDTH) { return; }
